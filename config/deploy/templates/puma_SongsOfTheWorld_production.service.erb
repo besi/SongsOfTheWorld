@@ -1,0 +1,20 @@
+# /etc/systemd/system/puma_SongsOfTheWorld_production.service
+
+[Unit]
+Description=Puma HTTP Server for SongsOfTheWorld (production)
+After=network.target
+
+[Service]
+Type=simple
+User=songsoftheworld
+WorkingDirectory=/home/songsoftheworld/rails/current
+ExecStart=/usr/bin/rbenv exec bundle exec puma -C config/puma.rb
+ExecReload=/bin/kill -TSTP $MAINPID
+StandardOutput=append:/home/songsoftheworld/rails/current/log/puma.access.log
+StandardError=append:/home/songsoftheworld/rails/current/log/puma.error.log
+Restart=always
+RestartSec=1
+SyslogIdentifier=puma
+
+[Install]
+WantedBy=multi-user.target

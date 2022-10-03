@@ -1,0 +1,11 @@
+# scp config/database.prod.yml music@dev.b-labs.ch:/home/music/rails/shared/config/database.yml
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: music
+  pool: 5
+  username: songsoftheworld
+  password: 9EE5DBF5AEAF
+  host: localhost
