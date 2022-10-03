@@ -64,6 +64,10 @@ group :development do
   # gem "spring"
 
   gem "slim-rails", "~> 3.5"
+  gem "capistrano", "~> 3.17"
+  gem "capistrano-rbenv", "~> 2.2"
+  gem "capistrano-rails", "~> 1.6"
+  gem "capistrano3-puma", "~> 5.2"
 end
 
 group :test do
